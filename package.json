@@ -1,12 +1,30 @@
 {
-  "name": "sandbox",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "sandbox",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format:prettier": "prettier --ignore-unknown --write \"**/*.{css,js,json,scss,ts,html,tsx}\"",
+		"prepare": "husky install"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"husky": "^8.0.3",
+		"prettier": "^3.2.5"
+	},
+	"lint-staged": {
+		"**/*": "prettier --ignore-unknown --write \"**/*.{css,js,json,scss,ts,html}\" \"!coverage/**/*.html\" "
+	},
+	"prettier": {
+		"useTabs": true,
+		"tabWidth": 2,
+		"printWidth": 100,
+		"singleQuote": true,
+		"jsxBracketSameLine": true,
+		"trailingComma": "none",
+		"arrowParens": "avoid"
+	}
 }
