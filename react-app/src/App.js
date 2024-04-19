@@ -7,6 +7,7 @@ import UseDeferredValueComponent from './components/useDeferredValue/UseDeferred
 import { ThemeProvider } from './context/ThemeContext';
 import TransitionComponent from './components/transition/TransitionComponent';
 import LazyComponent from './components/lazy/LazyComponent';
+import PortalComponent from './components/portal/PortalComponent';
 
 function App() {
 	return (
@@ -21,6 +22,8 @@ function App() {
 				<TransitionComponent />
 				<br />
 				<LazyComponent />
+				<br />
+				<PortalComponent />
 			</ThemeProvider>
 		</>
 	);
