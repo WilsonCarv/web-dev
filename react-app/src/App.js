@@ -8,6 +8,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import TransitionComponent from './components/transition/TransitionComponent';
 import LazyComponent from './components/lazy/LazyComponent';
 import PortalComponent from './components/portal/PortalComponent';
+import ErrorBoundarySampleComponent from './components/errorBoundaryComponent/ErrorBoundarySampleComponent';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 				<LazyComponent />
 				<br />
 				<PortalComponent />
+				<ErrorBoundarySampleComponent />
 			</ThemeProvider>
 		</>
 	);
