@@ -17,22 +17,39 @@ const PostSchema = new Schema({
 		ref: 'User',
 		required: true
 	},
+	likes: {
+		type: Number,
+		default: 0
+	},
+	active: {
+		type: Boolean,
+		default: true
+	},
+	metaData: {},
 	comments: [
 		{
 			body: String,
 			date: Date
 		}
-	]
+	],
+	socialMediaHandles: {
+		type: Map,
+		of: String
+	}
 });
 PostSchema.methods.toJSON = function () {
-	const { __v, _id, comments, ...post } = this.toObject();
+	const { __v, _id, comments, socialMediaHandles, ...post } = this.toObject();
 	let mappedComments = comments.map(comment => {
 		comment.id = comment._id;
 		delete comment._id;
 		return comment;
 	});
+	let mappedSocialMediaHandles = Array.from(socialMediaHandles || new Map()).flatMap(
+		([key, value]) => ({ key, value })
+	);
 	post.uid = _id;
 	post.comments = mappedComments;
+	post.socialMediaHandles = mappedSocialMediaHandles;
 	return post;
 };
 module.exports = model('Post', PostSchema);
