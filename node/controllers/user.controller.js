@@ -7,13 +7,11 @@ const postUser = async (req = request, res = response) => {
 
 		await user.save();
 		res.status(201).json({
-			ok: true,
 			user
 		});
 	} catch (error) {
 		console.log(error);
 		res.status(500).json({
-			ok: false,
 			msg: 'Error trying to save the user'
 		});
 	}
