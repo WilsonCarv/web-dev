@@ -1,5 +1,10 @@
 const { Schema, model } = require('mongoose');
+const { randomUUID } = require('crypto');
 const PostSchema = new Schema({
+	docId: {
+		type: 'UUID',
+		default: () => randomUUID()
+	},
 	title: {
 		type: String,
 		required: [true, 'The title is required']
