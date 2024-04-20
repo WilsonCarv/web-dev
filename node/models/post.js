@@ -16,11 +16,23 @@ const PostSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'User',
 		required: true
-	}
+	},
+	comments: [
+		{
+			body: String,
+			date: Date
+		}
+	]
 });
 PostSchema.methods.toJSON = function () {
-	const { __v, _id, ...post } = this.toObject();
+	const { __v, _id, comments, ...post } = this.toObject();
+	let mappedComments = comments.map(comment => {
+		comment.id = comment._id;
+		delete comment._id;
+		return comment;
+	});
 	post.uid = _id;
+	post.comments = mappedComments;
 	return post;
 };
 module.exports = model('Post', PostSchema);

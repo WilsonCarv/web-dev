@@ -3,8 +3,8 @@ const Post = require('../models/post');
 
 const createPost = async (req = request, res = response) => {
 	try {
-		const { title, content, image, user } = req.body;
-		const post = new Post({ title, content, image, user });
+		const { title, content, image, user, comments } = req.body;
+		const post = new Post({ title, content, image, user, comments });
 		await post.save();
 
 		res.status(201).json({
