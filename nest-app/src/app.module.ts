@@ -5,6 +5,7 @@ import { AppResolver } from './app.resolver';
 import { UserModule } from './user/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -13,9 +14,10 @@ import { ConfigModule } from '@nestjs/config';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
-      include: [UserModule],
+      include: [UserModule, PostModule],
     }),
     UserModule,
+    PostModule,
   ],
   controllers: [],
   providers: [AppResolver],
