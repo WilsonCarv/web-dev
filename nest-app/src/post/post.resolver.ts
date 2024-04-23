@@ -1,5 +1,5 @@
-import { Query, Resolver, Args } from '@nestjs/graphql';
-import { Post } from './post.model';
+import { Query, Resolver, Args, Mutation } from '@nestjs/graphql';
+import { Post, PostInput } from './post.model';
 import { PostService } from './post.service';
 
 @Resolver(() => Post)
@@ -9,5 +9,9 @@ export class PostResolver {
   @Query(() => [Post])
   getPostByUser(@Args('userId') userId: string): Promise<Post[]> {
     return this.postService.getPostByUser(userId);
+  }
+  @Mutation(() => Post)
+  createPost(@Args('post') post: PostInput): Promise<Post> {
+    return this.postService.createPost(post);
   }
 }

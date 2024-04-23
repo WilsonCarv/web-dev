@@ -1,4 +1,4 @@
-import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Field, ID, InputType, ObjectType } from '@nestjs/graphql';
 
 @ObjectType('User')
 export class User {
@@ -14,4 +14,9 @@ export class User {
   role: string;
   @Field(() => Boolean)
   state: boolean;
+}
+@InputType()
+export class UserInput {
+  @Field(() => ID)
+  id: string;
 }

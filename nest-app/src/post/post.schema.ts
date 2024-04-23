@@ -1,6 +1,5 @@
-import { HydratedDocument } from 'mongoose';
+import mongoose, { HydratedDocument, ObjectId } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { User } from './../user/user.schema';
 
 export type PostDocument = HydratedDocument<Post>;
 
@@ -15,8 +14,8 @@ export class Post {
   @Prop({ required: false })
   image: string;
 
-  @Prop({ required: true, type: User })
-  user: User;
+  @Prop({ required: true, tye: mongoose.Schema.Types.ObjectId, type: Object })
+  user: ObjectId;
 
   @Prop({ default: true })
   active: boolean;

@@ -1,5 +1,5 @@
-import { Field, ID, ObjectType } from '@nestjs/graphql';
-import { User } from './../user/user.model';
+import { Field, ID, InputType, ObjectType } from '@nestjs/graphql';
+import { User, UserInput } from './../user/user.model';
 
 @ObjectType('Post')
 export class Post {
@@ -19,5 +19,22 @@ export class Post {
   user: User;
 
   @Field(() => Boolean)
+  active: boolean;
+}
+@InputType()
+export class PostInput {
+  @Field(() => String)
+  title: string;
+
+  @Field(() => String)
+  content: string;
+
+  @Field(() => String, { nullable: true })
+  image: string;
+
+  @Field(() => UserInput)
+  user: UserInput;
+
+  @Field(() => Boolean, { nullable: true })
   active: boolean;
 }
