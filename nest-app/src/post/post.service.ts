@@ -10,7 +10,8 @@ export class PostService {
   createPost(post: PostInput): Promise<Post> {
     return this.postModel.create(post);
   }
-  getPostByUser(userId: string): Promise<Post[]> {
-    return this.postModel.find({ 'user.id': userId });
+  async getPostByUser(userId: string): Promise<Post[]> {
+    const result = await this.postModel.find({ userId: userId });
+    return result;
   }
 }

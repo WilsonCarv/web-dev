@@ -1,5 +1,7 @@
-import mongoose, { HydratedDocument, ObjectId } from 'mongoose';
+import mongoose, { HydratedDocument } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { ID } from '@nestjs/graphql';
+import ObjectId from 'mongoose';
 
 export type PostDocument = HydratedDocument<Post>;
 
@@ -14,8 +16,8 @@ export class Post {
   @Prop({ required: false })
   image: string;
 
-  @Prop({ required: true, tye: mongoose.Schema.Types.ObjectId, type: Object })
-  user: ObjectId;
+  @Prop({ required: true, tye: ObjectId, ref: 'User' })
+  userId: string;
 
   @Prop({ default: true })
   active: boolean;

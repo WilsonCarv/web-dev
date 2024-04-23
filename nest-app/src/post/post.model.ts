@@ -1,5 +1,4 @@
 import { Field, ID, InputType, ObjectType } from '@nestjs/graphql';
-import { User, UserInput } from './../user/user.model';
 
 @ObjectType('Post')
 export class Post {
@@ -15,8 +14,8 @@ export class Post {
   @Field(() => String, { nullable: true })
   image: string;
 
-  @Field(() => User)
-  user: User;
+  @Field(() => ID)
+  userId: string;
 
   @Field(() => Boolean)
   active: boolean;
@@ -32,8 +31,8 @@ export class PostInput {
   @Field(() => String, { nullable: true })
   image: string;
 
-  @Field(() => UserInput)
-  user: UserInput;
+  @Field(() => ID)
+  userId: string;
 
   @Field(() => Boolean, { nullable: true })
   active: boolean;
