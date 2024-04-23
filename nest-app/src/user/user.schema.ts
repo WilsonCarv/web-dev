@@ -20,12 +20,4 @@ export class User {
   @Prop({ default: true })
   state: boolean;
 }
-const UserSchema = SchemaFactory.createForClass(User);
-
-UserSchema.methods.toJSON = function () {
-  const { __v, _id, password, ...user } = this.toObject();
-  user.id = _id;
-  return user;
-};
-
-export { UserSchema };
+export const UserSchema = SchemaFactory.createForClass(User);
