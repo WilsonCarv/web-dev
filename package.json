@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"format:prettier": "prettier --ignore-unknown --write \"**/*.{css,js,json,scss,ts,html,tsx}\"",
+		"format:prettier": "prettier --ignore-unknown --write \"**/*.{css,js,json,scss,ts,html,tsx,cs}\"",
 		"prepare": "husky install"
 	},
 	"keywords": [],
@@ -16,7 +16,7 @@
 		"prettier": "^3.2.5"
 	},
 	"lint-staged": {
-		"**/*": "prettier --ignore-unknown --write \"**/*.{css,js,json,scss,ts,html}\" \"!coverage/**/*.html\" "
+		"**/*": "prettier --ignore-unknown --write \"**/*.{css,js,json,scss,ts,html,cs}\" \"!coverage/**/*.html\" "
 	},
 	"prettier": {
 		"useTabs": true,
