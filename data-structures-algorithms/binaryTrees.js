@@ -146,3 +146,59 @@ const swapNodes = root => {
 	return result;
 };
 console.log(swapNodes(a)); // a c b f e d
+
+// Invert a binary tree
+const invertTree = root => {
+	if (!root) return null;
+	const left = invertTree(root.left);
+	const right = invertTree(root.right);
+	root.left = right;
+	root.right = left;
+	return root;
+};
+
+//Tree includes
+const includes = (root, val) => {
+	if (!root) return false;
+	if (root.val === val) return true;
+	return includes(root.left, val) || includes(root.right, val);
+};
+
+console.log(includes(a, 'f')); // true
+
+const nodea = new Node(1);
+const nodeb = new Node(5);
+const nodec = new Node(4);
+const noded = new Node(4);
+const nodee = new Node(6);
+const nodef = new Node(7);
+
+nodea.left = nodeb;
+nodea.right = nodec;
+nodeb.left = noded;
+nodeb.right = nodee;
+nodec.right = nodef;
+
+// tree sum
+const sum = root => {
+	if (!root) return 0;
+	return root.val + sum(root.left) + sum(root.right);
+};
+
+console.log(sum(nodea)); // 21
+
+// tree max
+const max = root => {
+	if (!root) return -Infinity;
+	return Math.max(root.val, max(root.left), max(root.right));
+};
+
+console.log(max(nodea)); // f
+
+//max root to leaf path sum
+const maxPathSum = root => {
+	if (!root) return 0;
+	return root.val + Math.max(maxPathSum(root.left), maxPathSum(root.right));
+};
+
+console.log(maxPathSum(nodea)); // 15
