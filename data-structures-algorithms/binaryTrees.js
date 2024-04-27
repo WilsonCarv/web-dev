@@ -93,3 +93,56 @@ const breadthFirstSearchRecursive = (queue, result) => {
 console.log(breadthFirstSearch(a)); // a b c d e f
 
 console.log(breadthFirstSearchRecursive([a], [])); // a b c d e f
+
+// tree level order traversal
+const levelOrder = root => {
+	if (!root) return [];
+	const queue = [root];
+	const result = [];
+	while (queue.length > 0) {
+		const level = [];
+		const size = queue.length;
+		for (let i = 0; i < size; i++) {
+			const current = queue.shift();
+			level.push(current.val);
+			if (current.left) {
+				queue.push(current.left);
+			}
+			if (current.right) {
+				queue.push(current.right);
+			}
+		}
+		result.push(level);
+	}
+	return result;
+};
+
+console.log(levelOrder(a)); // [ [ 'a' ], [ 'b', 'c' ], [ 'd', 'e', 'f' ] ]
+
+//Tree Height of a binary tree
+const height = root => {
+	if (!root) return 0;
+	return 1 + Math.max(height(root.left), height(root.right));
+};
+
+console.log(height(a)); // 3
+
+// swap nodes array store the data in array level order
+
+const swapNodes = root => {
+	if (!root) return [];
+	const queue = [root];
+	const result = [];
+	while (queue.length > 0) {
+		const current = queue.shift();
+		result.push(current.val);
+		if (current.right) {
+			queue.push(current.right);
+		}
+		if (current.left) {
+			queue.push(current.left);
+		}
+	}
+	return result;
+};
+console.log(swapNodes(a)); // a c b f e d
