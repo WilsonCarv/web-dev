@@ -144,3 +144,140 @@ const groupedPeople = people.reduce((current, acc, index, array) => {
 	return current;
 }, {});
 console.log(groupedPeople);
+
+const groupedPeople2 = people.reduceRight((current, acc, index, array) => {
+	const age = acc.age;
+	if (current[age] == null) current[age] = [];
+	current[age].push(acc);
+	return current;
+}, {});
+
+console.log(groupedPeople2);
+
+const sortedArray = people.toSorted((a, b) => {
+	if (a.age > b.age) return 1;
+	if (a.age < b.age) return -1;
+	return 0;
+});
+console.log(sortedArray);
+
+const sortedArrayNames = people.sort((a, b) => {
+	if (a.name > b.name) return 1;
+	if (a.name < b.name) return -1;
+	return 0;
+});
+console.log(sortedArrayNames);
+
+console.log(Math.max(...numbers));
+console.log(Math.min(...numbers));
+
+const findMaxArray = arr => {
+	let len = arr.length;
+	let min = Infinity;
+	while (len--) {
+		if (arr[len] < min) {
+			min = arr[len];
+		}
+	}
+	return min;
+};
+
+const max = findMaxArray([1, 2, 3, 4, 5]);
+console.log(max);
+
+console.log(numbers.some(x => x > 10));
+console.log(numbers.every(x => x > 10));
+
+console.log(Array.from('hello'));
+const keys = people.keys();
+
+for (let key of keys) {
+	console.log(key);
+	console.log(people[key]);
+}
+
+const entries = people.entries();
+
+for (let entry of entries) {
+	console.log(entry);
+}
+
+//use of with
+const months = ['Jan', 'March', 'April', 'June'];
+const myMonths = months.with(1, 'MARCH');
+console.log(myMonths);
+
+//spread operator
+const arr = [1, 2, 3];
+const arr2 = [...arr, 4, 5, 6];
+console.log(arr2);
+//more complex example
+
+const arr3 = [1, 2, 3];
+const arr4 = [4, 5, 6];
+const arr5 = [...arr3, ...arr4];
+console.log(arr5);
+
+//use of rest operator
+function sum(...args) {
+	return args.reduce((acc, x) => acc + x, 0);
+}
+console.log(sum(1, 2, 3, 4, 5));
+
+//sets and maps
+const set = new Set([1, 2, 3, 4, 5]);
+console.log(set.size);
+console.log(set.has(1));
+console.log(set.add(6));
+console.log(set.delete(6));
+console.log(set.entries());
+console.log(set.keys());
+console.log(set.values());
+//console.log(set.clear());
+for (let value of set) {
+	console.log(value);
+}
+
+//Set of objects
+const setOfObjects = new Set([{ name: 'John' }, { name: 'Doe' }]);
+setOfObjects.add({ name: 'Jane' });
+setOfObjects.add({ name: 'Doe' });
+console.log(setOfObjects.has({ name: 'Jane' }));
+console.log(setOfObjects.has({ name: 'Doe' }));
+console.log(setOfObjects.delete({ name: 'Jane' }));
+console.log(setOfObjects.keys());
+console.log(setOfObjects.size);
+for (let value of setOfObjects) {
+	console.log(value);
+}
+const keys2 = setOfObjects.keys();
+for (let key of keys2) {
+	console.log(key);
+}
+
+//Maps
+const map = new Map();
+map.set('name', 'John');
+map.set('age', 30);
+console.log(map.get('name'));
+
+const fruits = new Map([
+	['apple', 100],
+	['banana', 200]
+]);
+console.log(fruits.size);
+console.log(fruits.has('apple'));
+console.log(fruits.get('apple'));
+const keys3 = fruits.keys();
+for (let key of keys3) {
+	console.log(key);
+	console.log(fruits.get(key));
+}
+//entries
+const entries2 = fruits.entries();
+for (let entry of entries2) {
+	for (let value of entry) {
+		console.log(entry);
+		console.log(value);
+	}
+}
