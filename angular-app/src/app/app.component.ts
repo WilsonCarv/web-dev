@@ -1,4 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+	AfterContentInit,
+	AfterViewInit,
+	Component,
+	ElementRef,
+	OnDestroy,
+	OnInit,
+	ViewChild
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
@@ -14,10 +22,15 @@ import { Subject, takeUntil } from 'rxjs';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
+	@ViewChild('componentRef', { static: true }) divRef!: ElementRef;
 	title = 'angular-app';
 	private readonly unSubscribeAll = new Subject();
+	showDiv = true;
 	constructor(private readonly creationService: CreationService) {}
+	ngAfterViewInit(): void {
+		this.divRef.nativeElement.innerHTML = 'Hello World';
+	}
 	ngOnDestroy(): void {
 		this.unSubscribeAll.next(null);
 		this.unSubscribeAll.unsubscribe();
