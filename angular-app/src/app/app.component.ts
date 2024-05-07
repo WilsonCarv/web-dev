@@ -54,6 +54,7 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		//this.subscribeToMerge();
 		//this.subscribeToConcatMap();
 		//this.subscribeToMergeMap();
+		this.subscribeToSwitchMap();
 	}
 	subscribeToAjax() {
 		this.creationService
@@ -116,6 +117,12 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 	subscribeToMergeMap() {
 		this.creationService
 			.mergeMap()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToSwitchMap() {
+		this.creationService
+			.switchMap()
 			.pipe(takeUntil(this.unSubscribeAll))
 			.subscribe(response => console.log('response: ', response));
 	}

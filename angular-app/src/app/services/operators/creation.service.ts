@@ -16,7 +16,8 @@ import {
 	forkJoin,
 	merge,
 	concatMap,
-	mergeMap
+	mergeMap,
+	switchMap
 } from 'rxjs';
 @Injectable({
 	providedIn: 'root'
@@ -78,5 +79,8 @@ export class CreationService {
 	mergeMap() {
 		const letters = of('a', 'b', 'c');
 		return letters.pipe(mergeMap(x => interval(1000).pipe(map(i => x + i))));
+	}
+	switchMap() {
+		return of(1, 2, 3).pipe(switchMap(x => of(x ** 1, x ** 2)));
 	}
 }
