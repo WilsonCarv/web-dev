@@ -44,11 +44,78 @@ export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
 		this.unSubscribeAll.unsubscribe();
 	}
 	ngOnInit(): void {
-		this.subscribeToAjax();
+		//this.subscribeToAjax();
+		//this.subscribeToDefer();
+		//this.subscribeToFrom();
+		//this.subscribeToRange();
+		//this.subscribeToCombineLatest();
+		//this.subscribeToConcat();
+		//this.subscribeToForkJoin();
+		//this.subscribeToMerge();
+		//this.subscribeToConcatMap();
+		//this.subscribeToMergeMap();
 	}
 	subscribeToAjax() {
 		this.creationService
 			.useAjax()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToDefer() {
+		this.creationService
+			.useDefer()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToFrom() {
+		this.creationService
+			.useFrom()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToRange() {
+		this.creationService
+			.useRange()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToCombineLatest() {
+		this.creationService
+			.combineLatest()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToConcat() {
+		this.creationService
+			.concat()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToForkJoin() {
+		this.creationService
+			.forkJoin()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe({
+				next: response => console.log('response: ', response),
+				error: error => console.log('error: ', error),
+				complete: () => console.log('complete')
+			});
+	}
+	subscribeToMerge() {
+		this.creationService
+			.merge()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToConcatMap() {
+		this.creationService
+			.concatMap()
+			.pipe(takeUntil(this.unSubscribeAll))
+			.subscribe(response => console.log('response: ', response));
+	}
+	subscribeToMergeMap() {
+		this.creationService
+			.mergeMap()
 			.pipe(takeUntil(this.unSubscribeAll))
 			.subscribe(response => console.log('response: ', response));
 	}
