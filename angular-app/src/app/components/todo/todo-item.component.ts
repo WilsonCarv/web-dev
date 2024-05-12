@@ -7,7 +7,14 @@ import { Component } from '@angular/core';
 	template: `
 		<li>(TODO) React angular Essential Guide</li>
 		<p>{{ taskTitle }}</p>
-		<button type="button" [disabled]="formIsInvalid">Save</button>
+		<button
+			(click)="onButtonClicked($event)"
+			[attr.data-test-id]="dataTestId"
+			type="button"
+			[disabled]="formIsInvalid"
+		>
+			Save
+		</button>
 	`,
 	styles: `
 		li {
@@ -19,12 +26,16 @@ import { Component } from '@angular/core';
 export class TodoItemComponent {
 	taskTitle = '';
 	isCompleted = false;
-	formIsInvalid = true;
+	formIsInvalid = false;
+	dataTestId = 'save-button';
 
 	completeTask() {
 		this.isCompleted = true;
 	}
 	updateTitle(title: string) {
 		this.taskTitle = title;
+	}
+	onButtonClicked(event: any) {
+		console.log('Button clicked', event);
 	}
 }
