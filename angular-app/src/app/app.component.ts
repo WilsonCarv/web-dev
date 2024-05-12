@@ -15,6 +15,7 @@ import { LoopsComponent } from './components/loops/loops.component';
 import { CreationService } from './services/operators/creation.service';
 import { Subject, takeUntil } from 'rxjs';
 import { ContainerComponent } from './components/custom-card/container/container.component';
+import { ParentComponent } from './components/passing-data/parent/parent.component';
 
 @Component({
 	selector: 'app-root',
@@ -25,7 +26,8 @@ import { ContainerComponent } from './components/custom-card/container/container
 		TodoListComponent,
 		ConditionalComponent,
 		LoopsComponent,
-		ContainerComponent
+		ContainerComponent,
+		ParentComponent
 	],
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']

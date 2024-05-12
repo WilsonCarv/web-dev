@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
 	selector: 'app-todo-item',
@@ -21,7 +21,8 @@ import { Component } from '@angular/core';
 			color: red;
 			font-weight: bold;
 		}
-	`
+	`,
+	encapsulation: ViewEncapsulation.Emulated
 })
 export class TodoItemComponent {
 	taskTitle = '';
