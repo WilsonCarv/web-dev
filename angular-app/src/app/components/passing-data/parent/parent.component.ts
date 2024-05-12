@@ -9,6 +9,7 @@ import { ChildComponent } from '../child/child.component';
 	styleUrl: './parent.component.scss'
 })
 export class ParentComponent {
+	productName: string | undefined = 'Phone';
 	onProductClicked(event: string) {
 		console.log('Product clicked', event);
 	}
