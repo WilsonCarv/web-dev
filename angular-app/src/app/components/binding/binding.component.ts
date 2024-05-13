@@ -14,6 +14,13 @@ export class BindingComponent {
 	productName = 'Phone';
 	phoneNumber = '8831-4528';
 	isError = true;
+	myBirthday = new Date(1994, 4, 31);
+	salary = 2877;
+	address = {
+		street: '123 Main St',
+		city: 'New York',
+		state: 'NY'
+	};
 
 	onMouseEnter(event: any) {
 		console.log('Mouse enter', event);

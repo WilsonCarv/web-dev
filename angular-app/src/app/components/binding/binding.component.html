@@ -5,3 +5,7 @@
 <p [class.isError]="isError" [style.backgroundColor]="isError ? 'green' : ''">
 	this is an error message
 </p>
+{{ myBirthday | date: 'dd-MM-YYYY' | lowercase }}
+{{ salary | currency }}
+{{ salary | percent }}
+{{ address | json }}
