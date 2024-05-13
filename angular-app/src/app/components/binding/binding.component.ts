@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SortByPipe } from '../../pipes/sort-by.pipe';
 
 @Component({
 	selector: 'app-binding',
 	standalone: true,
-	imports: [CommonModule, FormsModule],
+	imports: [CommonModule, FormsModule, SortByPipe],
 	templateUrl: './binding.component.html',
 	styleUrl: './binding.component.scss'
 })
@@ -21,6 +22,7 @@ export class BindingComponent {
 		city: 'New York',
 		state: 'NY'
 	};
+	numbers = [5, 6, 1, 3, 8, 2, 4, 7];
 
 	onMouseEnter(event: any) {
 		console.log('Mouse enter', event);
