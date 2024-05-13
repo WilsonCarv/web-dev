@@ -17,6 +17,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { ContainerComponent } from './components/custom-card/container/container.component';
 import { ParentComponent } from './components/passing-data/parent/parent.component';
 import { CustomSliderComponent } from './components/host/custom-slider/custom-slider.component';
+import { BindingComponent } from './components/binding/binding.component';
 
 @Component({
 	selector: 'app-root',
@@ -29,7 +30,8 @@ import { CustomSliderComponent } from './components/host/custom-slider/custom-sl
 		LoopsComponent,
 		ContainerComponent,
 		ParentComponent,
-		CustomSliderComponent
+		CustomSliderComponent,
+		BindingComponent
 	],
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
