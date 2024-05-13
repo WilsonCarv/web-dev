@@ -1,0 +1,14 @@
+<ng-container>
+	<p>This paragraph is no inside any extra container</p>
+</ng-container>
+
+<ng-container *ngIf="showAdminTemplate; else admin">
+	<p>this is a admin template</p>
+</ng-container>
+
+<ng-template #admin>
+	<p>this is a user template</p>
+</ng-template>
+
+<ng-template #greet><span>Hello</span></ng-template>
+<ng-container *ngTemplateOutlet="greet"></ng-container>

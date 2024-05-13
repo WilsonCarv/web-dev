@@ -18,6 +18,7 @@ import { ContainerComponent } from './components/custom-card/container/container
 import { ParentComponent } from './components/passing-data/parent/parent.component';
 import { CustomSliderComponent } from './components/host/custom-slider/custom-slider.component';
 import { BindingComponent } from './components/binding/binding.component';
+import { TemplateComponent } from './components/template/template.component';
 
 @Component({
 	selector: 'app-root',
@@ -31,7 +32,8 @@ import { BindingComponent } from './components/binding/binding.component';
 		ContainerComponent,
 		ParentComponent,
 		CustomSliderComponent,
-		BindingComponent
+		BindingComponent,
+		TemplateComponent
 	],
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
