@@ -1,5 +1,14 @@
 import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+	Component,
+	DoCheck,
+	EventEmitter,
+	Input,
+	OnChanges,
+	OnInit,
+	Output,
+	SimpleChanges
+} from '@angular/core';
 
 @Component({
 	selector: 'app-child',
@@ -8,7 +17,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 	templateUrl: './child.component.html',
 	styleUrl: './child.component.scss'
 })
-export class ChildComponent {
+export class ChildComponent implements OnInit, OnChanges, DoCheck {
 	@Input({ required: true, alias: 'productName' }) productName: string | undefined;
 	@Output() productClicked = new EventEmitter<string>();
+	ngOnInit(): void {
+		console.log('Ng onInit', this.productName);
+	}
+	ngOnChanges(changes: SimpleChanges): void {
+		console.log('Ng onChanges', changes);
+	}
+	ngDoCheck() {
+		console.log('Ng doCheck');
+	}
 }

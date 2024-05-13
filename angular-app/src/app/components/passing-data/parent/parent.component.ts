@@ -11,6 +11,7 @@ import { ChildComponent } from '../child/child.component';
 export class ParentComponent {
 	productName: string | undefined = 'Phone';
 	onProductClicked(event: string) {
+		this.productName = event;
 		console.log('Product clicked', event);
 	}
 }
