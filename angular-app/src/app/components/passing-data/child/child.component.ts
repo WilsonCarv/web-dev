@@ -20,6 +20,8 @@ import {
 export class ChildComponent implements OnInit, OnChanges, DoCheck {
 	@Input({ required: true, alias: 'productName' }) productName: string | undefined;
 	@Output() productClicked = new EventEmitter<string>();
+	@Input() counter: number = 0;
+	@Output() counterChange = new EventEmitter<number>();
 	brandName = 'Apple';
 	ngOnInit(): void {
 		console.log('Ng onInit', this.productName);

@@ -13,6 +13,7 @@ export class ParentComponent implements AfterViewInit {
 	@ViewChildren(ChildComponent) children!: ChildComponent;
 	@ViewChildren('text') textRef: any | undefined;
 	myText = 'Hello World';
+	counter = 0;
 	onProductClicked(event: string) {
 		this.productName = event;
 		console.log('Product clicked', event);

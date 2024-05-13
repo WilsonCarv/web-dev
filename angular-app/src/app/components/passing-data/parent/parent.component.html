@@ -1,2 +1,7 @@
-<app-child [productName]="productName" (productClicked)="onProductClicked($event)"> </app-child>
+<app-child
+	[productName]="productName"
+	(productClicked)="onProductClicked($event)"
+	[(counter)]="counter"
+>
+</app-child>
 <p #text>{{ myText }}</p>

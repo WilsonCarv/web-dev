@@ -3,3 +3,8 @@
 	the name of the product is {{ productName }}
 	<button (click)="productClicked.emit('Burger')">Click me!!</button>
 </ng-container>
+<div>
+	{{ counter }}
+	<button type="button" (click)="counterChange.emit(counter + 1)">Increase counter</button>
+	<button type="button" (click)="counterChange.emit(counter - 1)">Decrease counter</button>
+</div>
