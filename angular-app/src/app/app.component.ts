@@ -16,6 +16,7 @@ import { CreationService } from './services/operators/creation.service';
 import { Subject, takeUntil } from 'rxjs';
 import { ContainerComponent } from './components/custom-card/container/container.component';
 import { ParentComponent } from './components/passing-data/parent/parent.component';
+import { CustomSliderComponent } from './components/host/custom-slider/custom-slider.component';
 
 @Component({
 	selector: 'app-root',
@@ -27,7 +28,8 @@ import { ParentComponent } from './components/passing-data/parent/parent.compone
 		ConditionalComponent,
 		LoopsComponent,
 		ContainerComponent,
-		ParentComponent
+		ParentComponent,
+		CustomSliderComponent
 	],
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
