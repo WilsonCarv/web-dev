@@ -2,16 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SortByPipe } from '../../pipes/sort-by.pipe';
+import { HighlightDirective } from '../../directives/highligth.directive';
 
 @Component({
 	selector: 'app-binding',
 	standalone: true,
-	imports: [CommonModule, FormsModule, SortByPipe],
+	imports: [CommonModule, FormsModule, SortByPipe, HighlightDirective],
 	templateUrl: './binding.component.html',
 	styleUrl: './binding.component.scss'
 })
 export class BindingComponent {
 	isButtonDisabled = false;
+	color = 'red';
 	productName = 'Phone';
 	phoneNumber = '8831-4528';
 	isError = true;

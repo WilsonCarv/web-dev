@@ -1,4 +1,5 @@
 <span>{{ productName | uppercase }}</span>
+<p appHighlight [color]="color">this is a p</p>
 <button [disabled]="isButtonDisabled" (mouseenter)="onMouseEnter($event)">This is a button</button>
 <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" />
 <p [ngClass]="isError ? 'isError' : ''">this is an error message</p>
