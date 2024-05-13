@@ -13,6 +13,7 @@ export class BindingComponent {
 	isButtonDisabled = false;
 	productName = 'Phone';
 	phoneNumber = '8831-4528';
+	isError = true;
 
 	onMouseEnter(event: any) {
 		console.log('Mouse enter', event);
