@@ -19,6 +19,7 @@ import { ParentComponent } from './components/passing-data/parent/parent.compone
 import { CustomSliderComponent } from './components/host/custom-slider/custom-slider.component';
 import { BindingComponent } from './components/binding/binding.component';
 import { TemplateComponent } from './components/template/template.component';
+import { FormExampleComponent } from './components/form-example/form-example.component';
 
 @Component({
 	selector: 'app-root',
@@ -33,7 +34,8 @@ import { TemplateComponent } from './components/template/template.component';
 		ParentComponent,
 		CustomSliderComponent,
 		BindingComponent,
-		TemplateComponent
+		TemplateComponent,
+		FormExampleComponent
 	],
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
