@@ -146,6 +146,7 @@ const swapNodes = root => {
 	return result;
 };
 console.log(swapNodes(a)); // a c b f e d
+console.log(swapNodes(a).reverse()); // d e f b c a
 
 // Invert a binary tree
 const invertTree = root => {
