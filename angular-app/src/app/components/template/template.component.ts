@@ -14,7 +14,7 @@ export class TemplateComponent {
 
 	constructor(private activateRoute: ActivatedRoute) {
 		this.activateRoute.queryParams.subscribe(params => {
-			this.showAdminTemplate = params['showAdminTemplate'];
+			this.showAdminTemplate = params['showAdminTemplate'] === 'true';
 		});
 	}
 }
