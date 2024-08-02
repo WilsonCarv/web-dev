@@ -1,6 +1,5 @@
-import mongoose, { HydratedDocument } from 'mongoose';
+import { HydratedDocument } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { ID } from '@nestjs/graphql';
 import ObjectId from 'mongoose';
 
 export type PostDocument = HydratedDocument<Post>;
