@@ -3,7 +3,7 @@ const { randomUUID } = require('crypto');
 const PostSchema = new Schema({
 	docId: {
 		type: 'UUID',
-		default: () => randomUUID()
+		default: randomUUID()
 	},
 	title: {
 		type: String,
@@ -40,7 +40,7 @@ const PostSchema = new Schema({
 			},
 			id: {
 				type: 'UUID',
-				default: () => randomUUID()
+				default: randomUUID()
 			}
 		}
 	],

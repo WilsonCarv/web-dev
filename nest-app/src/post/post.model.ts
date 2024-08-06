@@ -1,5 +1,5 @@
 import { Field, ID, InputType, ObjectType } from '@nestjs/graphql';
-import { randomUUID } from 'crypto';
+import { randomUUID, UUID } from 'crypto';
 
 @ObjectType('Comment')
 class Comment {
@@ -34,7 +34,7 @@ export class Post {
   active: boolean;
 
   @Field(() => String)
-  docId: string;
+  docId: UUID;
 
   @Field(() => Number)
   likes: number;

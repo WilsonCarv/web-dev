@@ -1,7 +1,7 @@
 import { HydratedDocument, Schema as MongooseSchema } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import ObjectId from 'mongoose';
-import { randomUUID } from 'crypto';
+import { randomUUID, UUID } from 'crypto';
 
 export type PostDocument = HydratedDocument<Post>;
 
@@ -29,7 +29,7 @@ export class Post {
   comments: any[];
 
   @Prop({ default: randomUUID() })
-  docId: string;
+  docId: UUID;
 
   @Prop({ default: 0 })
   likes: number;
