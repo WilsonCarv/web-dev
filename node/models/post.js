@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const { randomUUID } = require('crypto');
 const PostSchema = new Schema({
 	docId: {
-		type: 'UUID',
+		type: String,
 		default: randomUUID()
 	},
 	title: {
@@ -39,7 +39,7 @@ const PostSchema = new Schema({
 				default: Date.now
 			},
 			id: {
-				type: 'UUID',
+				type: String,
 				default: randomUUID()
 			}
 		}
@@ -58,7 +58,7 @@ PostSchema.methods.toJSON = function () {
 	let mappedSocialMediaHandles = Array.from(socialMediaHandles || new Map()).flatMap(
 		([key, value]) => ({ key, value })
 	);
-	post.uid = _id;
+	post.id = _id;
 	post.comments = mappedComments;
 	post.socialMediaHandles = mappedSocialMediaHandles;
 	return post;
