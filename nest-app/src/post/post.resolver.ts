@@ -7,7 +7,7 @@ export class PostResolver {
   constructor(private readonly postService: PostService) {}
 
   @Query(() => [Post])
-  getPostByUser(@Args('userId') userId: string): Promise<Post[]> {
+  getPostByUser(@Args('user') userId: string): Promise<Post[]> {
     return this.postService.getPostByUser(userId);
   }
   @Mutation(() => Post)

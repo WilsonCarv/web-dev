@@ -34,7 +34,14 @@ const PostSchema = new Schema({
 	comments: [
 		{
 			body: String,
-			date: Date
+			date: {
+				type: Date,
+				default: Date.now
+			},
+			id: {
+				type: 'UUID',
+				default: () => randomUUID()
+			}
 		}
 	],
 	socialMediaHandles: {
@@ -45,7 +52,6 @@ const PostSchema = new Schema({
 PostSchema.methods.toJSON = function () {
 	const { __v, _id, comments, socialMediaHandles, ...post } = this.toObject();
 	let mappedComments = comments.map(comment => {
-		comment.id = comment._id;
 		delete comment._id;
 		return comment;
 	});

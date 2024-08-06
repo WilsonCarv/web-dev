@@ -11,7 +11,7 @@ export class PostService {
     return this.postModel.create(post);
   }
   async getPostByUser(userId: string): Promise<Post[]> {
-    const result = await this.postModel.find({ userId: userId });
+    const result = await this.postModel.find({ user: userId });
     return result;
   }
 }
