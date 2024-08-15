@@ -52,11 +52,36 @@ class LinkedList {
 		}
 		return temp;
 	}
+	unshift(value) {
+		const node = new Node(value);
+		if (!this.head) {
+			this.head = node;
+			this.tail = node;
+		} else {
+			node.next = this.head;
+			this.head = node;
+		}
+		this.length++;
+	}
+	shift() {
+		if (!this.head) return undefined;
+		let temp = this.head;
+		if (this.head === this.tail) {
+			temp = this.head;
+			this.head = null;
+			this.tail = null;
+		} else {
+			temp = this.head;
+			this.head = this.head.next;
+		}
+		this.length--;
+		return temp;
+	}
 }
 
-let myLinkedList = new LinkedList(4);
+let myLinkedList = new LinkedList(10);
 myLinkedList.push(5);
 myLinkedList.push(6);
 myLinkedList.push(7);
-console.log(myLinkedList.pop());
+console.log(myLinkedList.shift());
 myLinkedList.printList();
