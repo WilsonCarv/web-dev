@@ -132,13 +132,22 @@ class LinkedList {
 		}
 		return this;
 	}
+	findMiddleNode() {
+		let slow = this.head;
+		let fast = this.head;
+		while (fast !== null && fast.next !== null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		return slow;
+	}
 }
 
-let myLinkedList = new LinkedList(10);
+let myLinkedList = new LinkedList(1);
+myLinkedList.push(2);
+myLinkedList.push(3);
+myLinkedList.push(4);
 myLinkedList.push(5);
 myLinkedList.push(6);
-myLinkedList.push(7);
-console.log(myLinkedList.get(1));
-console.log(myLinkedList.set(1, 55));
-myLinkedList.reverse();
 myLinkedList.printList();
+console.log(myLinkedList.findMiddleNode());
