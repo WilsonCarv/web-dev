@@ -1,4 +1,4 @@
-import { Component, computed, effect, input, signal } from '@angular/core';
+import { Component, computed, effect, input, model, signal } from '@angular/core';
 import { interval } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 
@@ -10,6 +10,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 	styleUrl: './signal.component.scss'
 })
 export class SignalComponent {
+	counterModel = model(0);
 	firstName = input<string>('');
 	age = input<number>(0);
 	lastName = input.required<string>();
@@ -32,5 +33,8 @@ export class SignalComponent {
 	}
 	addItem() {
 		this.itemList.set([...this.itemList(), { name: 'Car', price: 1000 }]);
+	}
+	changeCounter() {
+		this.counterModel.update(prev => prev + 1);
 	}
 }

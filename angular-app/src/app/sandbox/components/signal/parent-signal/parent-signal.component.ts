@@ -12,4 +12,5 @@ export class ParentSignalComponent {
 	firstName = signal<string>('Wilson');
 	age = signal<number>(30);
 	lastName = signal<string>('Carvajal');
+	counter = signal<number>(0);
 }
