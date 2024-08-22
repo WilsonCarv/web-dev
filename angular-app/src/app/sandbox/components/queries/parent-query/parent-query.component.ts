@@ -9,4 +9,12 @@ import { DeepChildQueryComponent } from '../deep-child-query/deep-child-query.co
 	templateUrl: './parent-query.component.html',
 	styleUrl: './parent-query.component.scss'
 })
-export class ParentQueryComponent {}
+export class ParentQueryComponent {
+	age = 30;
+
+	constructor() {}
+
+	setAge() {
+		this.age = Math.random() * 100;
+	}
+}

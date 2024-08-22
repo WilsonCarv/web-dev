@@ -1,4 +1,5 @@
-<app-child-query>
+<app-child-query [(age)]="age">
+	<button type="button" (click)="setAge()">Change age from Parent</button>
 	<app-deep-child-query></app-deep-child-query>
 	<app-deep-child-query></app-deep-child-query>
 </app-child-query>
