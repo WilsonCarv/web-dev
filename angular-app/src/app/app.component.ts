@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { SignalComponent } from './sandbox/components/signal/signal.component';
+import { ParentSignalComponent } from './sandbox/components/signal/parent-signal/parent-signal.component';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [SignalComponent],
+	imports: [ParentSignalComponent],
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
