@@ -1,0 +1,9 @@
+<ul>
+	@for (item of itemList(); track $index) {
+		<li>
+			{{ item.name }} - {{ item.price }}
+			<button (click)="removeItem(item)">Remove</button>
+		</li>
+	}
+	<li>Total: {{ totalPrice() }}</li>
+</ul>
