@@ -6,6 +6,6 @@
 	<div #divRef></div>
 	<div #divRef></div>
 	<ng-content></ng-content>
-	{{ age }}
+	{{ age() }}
 	<button (click)="changeAgeFromChild()" type="button">Change age from child</button>
 </ng-container>

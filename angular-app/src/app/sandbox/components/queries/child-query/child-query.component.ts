@@ -1,22 +1,20 @@
 import {
-	Component,
-	ElementRef,
-	ViewChild,
-	AfterViewInit,
-	ViewChildren,
-	QueryList,
-	ContentChild,
-	AfterContentInit,
-	ContentChildren,
-	Input,
-	OnInit,
-	OnChanges,
-	SimpleChanges,
-	AfterContentChecked,
-	AfterViewChecked,
-	OnDestroy,
-	Output,
-	EventEmitter
+  Component,
+  ElementRef,
+  AfterViewInit,
+  AfterContentInit,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+  AfterContentChecked,
+  AfterViewChecked,
+  OnDestroy,
+  input,
+  viewChild,
+  viewChildren,
+  contentChild,
+  contentChildren,
+  output
 } from '@angular/core';
 import { DeepChildQueryComponent } from '../deep-child-query/deep-child-query.component';
 
@@ -36,14 +34,14 @@ export class ChildQueryComponent
 		AfterViewChecked,
 		OnDestroy
 {
-	@Input('age') age: number | undefined;
-	@Output('ageChange') ageChange = new EventEmitter<number>();
-	@ViewChild('textRef') inputTextRef?: ElementRef<HTMLInputElement>;
-	@ViewChildren('divRef') divRef?: QueryList<ElementRef<HTMLDivElement>>;
-	@ContentChild(DeepChildQueryComponent) deepChildQuery?: DeepChildQueryComponent;
-	@ContentChildren(DeepChildQueryComponent) deepChildQueryList?: QueryList<DeepChildQueryComponent>;
+	readonly age = input<number>();
+	ageChange = output<number>();
+	readonly inputTextRef = viewChild<ElementRef<HTMLInputElement>>('textRef');
+	readonly divRef = viewChildren<ElementRef<HTMLDivElement>>('divRef');
+	readonly deepChildQuery = contentChild(DeepChildQueryComponent);
+	readonly deepChildQueryList = contentChildren(DeepChildQueryComponent);
 	ngOnInit(): void {
-		console.log('Ng onInit', this.age);
+		console.log('Ng onInit', this.age());
 	}
 	ngOnChanges(changes: SimpleChanges): void {
 		console.log('Ng onChanges', changes);
@@ -53,15 +51,15 @@ export class ChildQueryComponent
 	}
 
 	ngAfterViewInit(): void {
-		this.inputTextRef?.nativeElement.focus();
+		this.inputTextRef()?.nativeElement.focus();
 
-		this.divRef?.forEach(element => {
+		this.divRef()?.forEach(element => {
 			element.nativeElement.style.backgroundColor = 'red';
 		});
 	}
 	ngAfterContentInit(): void {
-		console.log(this.deepChildQuery?.name);
-		this.deepChildQueryList?.forEach(element => {
+		console.log(this.deepChildQuery()?.name);
+		this.deepChildQueryList()?.forEach(element => {
 			console.log(element.name);
 		});
 	}

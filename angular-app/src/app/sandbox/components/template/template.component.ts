@@ -1,17 +1,19 @@
-import { NgIf, NgTemplateOutlet } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-template',
-    imports: [NgIf, NgTemplateOutlet],
+    imports: [NgTemplateOutlet],
     templateUrl: './template.component.html',
     styleUrl: './template.component.scss'
 })
 export class TemplateComponent {
+	private activateRoute = inject(ActivatedRoute);
+
 	showAdminTemplate = false;
 
-	constructor(private activateRoute: ActivatedRoute) {
+	constructor() {
 		this.activateRoute.queryParams.subscribe(params => {
 			this.showAdminTemplate = params['showAdminTemplate'] === 'true';
 		});

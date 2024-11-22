@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class FormExampleComponent {
 	exampleForm: FormGroup;
 
-	constructor(formBuilder: FormBuilder) {
+	constructor() {
+		const formBuilder = inject(FormBuilder);
+
 		this.exampleForm = formBuilder.group({
 			email: '',
 			password: ''

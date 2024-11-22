@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, viewChildren } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 
 @Component({
@@ -9,8 +9,8 @@ import { ChildComponent } from '../child/child.component';
 })
 export class ParentComponent implements AfterViewInit {
 	productName: string | undefined = 'Phone';
-	@ViewChildren(ChildComponent) children!: ChildComponent;
-	@ViewChildren('text') textRef: any | undefined;
+	readonly children = viewChildren(ChildComponent);
+	readonly textRef = viewChildren<ElementRef<HTMLInputElement>>('text');
 	myText = 'Hello World';
 	counter = 0;
 	onProductClicked(event: string) {
@@ -18,7 +18,7 @@ export class ParentComponent implements AfterViewInit {
 		console.log('Product clicked', event);
 	}
 	ngAfterViewInit(): void {
-		console.log('AfterViewInit in parent', this.children);
-		this.textRef.last.nativeElement.innerHTML = 'Hello World 2';
+		console.log('AfterViewInit in parent', this.children());
+		this.textRef().at(-1)!.nativeElement.innerHTML = 'Hello World 2';
 	}
 }
