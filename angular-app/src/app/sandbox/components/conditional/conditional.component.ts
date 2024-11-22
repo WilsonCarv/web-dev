@@ -2,10 +2,9 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-conditional',
-	standalone: true,
-	imports: [NgIf],
-	template: `
+    selector: 'app-conditional',
+    imports: [NgIf],
+    template: `
 		@if (isAdmin) {
 			<h1>Welcome Admin</h1>
 		} @else {
@@ -13,7 +12,7 @@ import { Component } from '@angular/core';
 		}
 		<div *ngIf="isAdmin">hello admin</div>
 	`,
-	styles: ``
+    styles: ``
 })
 export class ConditionalComponent {
 	isAdmin = true;

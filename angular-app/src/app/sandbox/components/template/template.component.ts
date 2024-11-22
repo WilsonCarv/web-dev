@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-	selector: 'app-template',
-	standalone: true,
-	imports: [NgIf, NgTemplateOutlet],
-	templateUrl: './template.component.html',
-	styleUrl: './template.component.scss'
+    selector: 'app-template',
+    imports: [NgIf, NgTemplateOutlet],
+    templateUrl: './template.component.html',
+    styleUrl: './template.component.scss'
 })
 export class TemplateComponent {
 	showAdminTemplate = false;

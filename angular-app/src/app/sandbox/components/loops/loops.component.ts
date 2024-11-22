@@ -2,10 +2,9 @@ import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-loops',
-	standalone: true,
-	imports: [NgFor],
-	template: `
+    selector: 'app-loops',
+    imports: [NgFor],
+    template: `
 		<ul>
 			@for (item of ingredientList; track $index) {
 				<li>{{ item.name }} ({{ item.quantity }})</li>
@@ -15,7 +14,7 @@ import { Component } from '@angular/core';
 			<li *ngFor="let item of ingredientList; index as index">{{ index + 1 }} - {{ item.name }}</li>
 		</ul>
 	`,
-	styles: ``
+    styles: ``
 })
 export class LoopsComponent {
 	ingredientList = [

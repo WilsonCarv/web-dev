@@ -21,11 +21,10 @@ import {
 import { DeepChildQueryComponent } from '../deep-child-query/deep-child-query.component';
 
 @Component({
-	selector: 'app-child-query',
-	standalone: true,
-	imports: [],
-	templateUrl: './child-query.component.html',
-	styleUrl: './child-query.component.scss'
+    selector: 'app-child-query',
+    imports: [],
+    templateUrl: './child-query.component.html',
+    styleUrl: './child-query.component.scss'
 })
 export class ChildQueryComponent
 	implements

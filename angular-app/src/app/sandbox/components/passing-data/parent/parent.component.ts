@@ -2,11 +2,10 @@ import { AfterViewInit, Component, ElementRef, ViewChildren } from '@angular/cor
 import { ChildComponent } from '../child/child.component';
 
 @Component({
-	selector: 'app-parent',
-	standalone: true,
-	imports: [ChildComponent],
-	templateUrl: './parent.component.html',
-	styleUrl: './parent.component.scss'
+    selector: 'app-parent',
+    imports: [ChildComponent],
+    templateUrl: './parent.component.html',
+    styleUrl: './parent.component.scss'
 })
 export class ParentComponent implements AfterViewInit {
 	productName: string | undefined = 'Phone';
