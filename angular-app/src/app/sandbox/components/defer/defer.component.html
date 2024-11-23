@@ -3,3 +3,36 @@
 } @placeholder {
 	<p>Loading...</p>
 }
+<!-- @defer (on idle) -->
+@defer {
+	<app-profile></app-profile>
+} @placeholder {
+	<div>Large component idle</div>
+}
+
+@defer (on viewport) {
+	<app-profile></app-profile>
+} @placeholder {
+	<div>Large component viewport</div>
+}
+<div #greeting>Hello!</div>
+@defer (on viewport(greeting)) {
+	<app-profile></app-profile>
+}
+
+@defer (on interaction) {
+	<app-profile></app-profile>
+} @placeholder {
+	<div>Large component placeholder</div>
+}
+
+@defer (on timer(5000ms)) {
+	<app-profile></app-profile>
+} @placeholder {
+	<div>Large component placeholder</div>
+}
+@defer (when deferCondition) {
+	<app-profile></app-profile>
+} @placeholder {
+	<div>Large deferCondition</div>
+}

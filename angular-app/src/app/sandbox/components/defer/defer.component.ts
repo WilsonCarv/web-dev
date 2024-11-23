@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-profile',
@@ -11,4 +11,11 @@ export class ProfileComponent {}
 	templateUrl: './defer.component.html',
 	styleUrl: './defer.component.scss'
 })
-export class DeferComponent {}
+export class DeferComponent implements OnInit {
+	deferCondition = false;
+	ngOnInit(): void {
+		setTimeout(() => {
+			this.deferCondition = true;
+		}, 10000);
+	}
+}
