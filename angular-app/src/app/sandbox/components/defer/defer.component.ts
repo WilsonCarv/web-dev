@@ -16,6 +16,6 @@ export class DeferComponent implements OnInit {
 	ngOnInit(): void {
 		setTimeout(() => {
 			this.deferCondition = true;
-		}, 10000);
+		}, 3000);
 	}
 }
