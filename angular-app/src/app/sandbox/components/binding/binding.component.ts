@@ -5,10 +5,10 @@ import { SortByPipe } from '../../pipes/sort-by.pipe';
 import { HighlightDirective } from '../../directives/highligth.directive';
 
 @Component({
-    selector: 'app-binding',
-    imports: [CommonModule, FormsModule, SortByPipe, HighlightDirective],
-    templateUrl: './binding.component.html',
-    styleUrl: './binding.component.scss'
+	selector: 'app-binding',
+	imports: [CommonModule, FormsModule, SortByPipe, HighlightDirective],
+	templateUrl: './binding.component.html',
+	styleUrl: './binding.component.scss'
 })
 export class BindingComponent {
 	isButtonDisabled = false;

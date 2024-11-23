@@ -2,10 +2,10 @@ import { Component, signal } from '@angular/core';
 import { SignalComponent } from '../signal.component';
 
 @Component({
-    selector: 'app-parent-signal',
-    imports: [SignalComponent],
-    templateUrl: './parent-signal.component.html',
-    styleUrl: './parent-signal.component.scss'
+	selector: 'app-parent-signal',
+	imports: [SignalComponent],
+	templateUrl: './parent-signal.component.html',
+	styleUrl: './parent-signal.component.scss'
 })
 export class ParentSignalComponent {
 	firstName = signal<string>('Wilson');

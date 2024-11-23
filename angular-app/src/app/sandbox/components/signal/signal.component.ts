@@ -3,10 +3,10 @@ import { interval } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
-    selector: 'app-signal',
-    imports: [],
-    templateUrl: './signal.component.html',
-    styleUrl: './signal.component.scss'
+	selector: 'app-signal',
+	imports: [],
+	templateUrl: './signal.component.html',
+	styleUrl: './signal.component.scss'
 })
 export class SignalComponent {
 	counterModel = model(0);

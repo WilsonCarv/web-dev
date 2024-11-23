@@ -1,16 +1,16 @@
 Show admin template : {{ showAdminTemplate }}
 <ng-container>
-  <p>This paragraph is no inside any extra container</p>
+	<p>This paragraph is no inside any extra container</p>
 </ng-container>
 
 @if (showAdminTemplate) {
-  <p>this is a admin template</p>
+	<p>this is a admin template</p>
 } @else {
-  <p>this is a user template</p>
+	<p>this is a user template</p>
 }
 
 <ng-template #admin>
-  <p>this is a user template</p>
+	<p>this is a user template</p>
 </ng-template>
 
 <ng-template #greet><span>Hello</span></ng-template>

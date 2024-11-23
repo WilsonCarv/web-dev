@@ -1,19 +1,10 @@
-
-import {
-  Component,
-  DoCheck,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-  input,
-  output
-} from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, SimpleChanges, input, output } from '@angular/core';
 
 @Component({
-    selector: 'app-child',
-    imports: [],
-    templateUrl: './child.component.html',
-    styleUrl: './child.component.scss'
+	selector: 'app-child',
+	imports: [],
+	templateUrl: './child.component.html',
+	styleUrl: './child.component.scss'
 })
 export class ChildComponent implements OnInit, OnChanges, DoCheck {
 	readonly productName = input.required<string | undefined>();

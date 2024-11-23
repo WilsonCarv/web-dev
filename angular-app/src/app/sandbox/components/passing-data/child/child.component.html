@@ -1,11 +1,11 @@
 <span>{{ brandName }}</span>
 @if (productName()) {
-  the name of the product is {{ productName() }}
-  <button (click)="productClicked.emit('Burger')">Click me!!</button>
+	the name of the product is {{ productName() }}
+	<button (click)="productClicked.emit('Burger')">Click me!!</button>
 }
 <div>
-  {{ counter() }}
-  <button type="button" (click)="counterChange.emit(counter() + 1)">Increase counter</button>
-  <button type="button" (click)="counterChange.emit(counter() - 1)">Decrease counter</button>
-  <span [style.font-size.px]="counter()">Change text</span>
+	{{ counter() }}
+	<button type="button" (click)="counterChange.emit(counter() + 1)">Increase counter</button>
+	<button type="button" (click)="counterChange.emit(counter() - 1)">Decrease counter</button>
+	<span [style.font-size.px]="counter()">Change text</span>
 </div>

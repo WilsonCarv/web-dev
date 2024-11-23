@@ -3,10 +3,10 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'app-template',
-    imports: [NgTemplateOutlet],
-    templateUrl: './template.component.html',
-    styleUrl: './template.component.scss'
+	selector: 'app-template',
+	imports: [NgTemplateOutlet],
+	templateUrl: './template.component.html',
+	styleUrl: './template.component.scss'
 })
 export class TemplateComponent {
 	private activateRoute = inject(ActivatedRoute);

@@ -1,13 +1,13 @@
 import { Component, HostBinding, HostListener } from '@angular/core';
 
 @Component({
-    selector: 'app-custom-slider',
-    imports: [],
-    templateUrl: './custom-slider.component.html',
-    styleUrl: './custom-slider.component.scss',
-    host: {
-        '[class]': 'className'
-    }
+	selector: 'app-custom-slider',
+	imports: [],
+	templateUrl: './custom-slider.component.html',
+	styleUrl: './custom-slider.component.scss',
+	host: {
+		'[class]': 'className'
+	}
 })
 export class CustomSliderComponent {
 	className = 'custom-slider';

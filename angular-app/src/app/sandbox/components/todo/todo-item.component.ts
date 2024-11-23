@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector: 'app-todo-item',
-    imports: [],
-    template: `
+	selector: 'app-todo-item',
+	imports: [],
+	template: `
 		<li>(TODO) React angular Essential Guide</li>
 		<p>{{ taskTitle }}</p>
 		<button
@@ -15,13 +15,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
 			Save
 		</button>
 	`,
-    styles: `
+	styles: `
 		li {
 			color: red;
 			font-weight: bold;
 		}
 	`,
-    encapsulation: ViewEncapsulation.Emulated
+	encapsulation: ViewEncapsulation.Emulated
 })
 export class TodoItemComponent {
 	taskTitle = '';
