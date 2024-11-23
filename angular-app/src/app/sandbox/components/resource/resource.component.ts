@@ -1,4 +1,4 @@
-import { Component, resource, signal } from '@angular/core';
+import { Component, resource, signal, ResourceStatus } from '@angular/core';
 import { API_URL } from './config';
 import { User } from './model';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
